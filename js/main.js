@@ -88,7 +88,25 @@
   if (data.questions.length) { run(0); }
 
   /* ---- projects ---- */
+  // Showzo's picture: a small seat map. Grey seats are taken, the bright one is the seat 8 people tried for.
+  var seatMap = "";
+  for (var r = 0; r < 6; r++) {
+    for (var c = 0; c < 12; c++) {
+      var won = r === 3 && c === 6;
+      var taken = !won && (r * 7 + c * 5) % 9 < 3;
+      seatMap += '<i class="' + (won ? "won" : taken ? "t" : "") + '"' + (c === 6 ? ' style="margin-left:.5rem"' : "") + "></i>";
+    }
+  }
   var visuals = {
+    showzo:
+      '<p class="visual__label">8 people tap the same seat at once</p>' +
+      '<div class="visual__seats">' + seatMap + '</div>' +
+      '<div class="visual__screen"><span>screen</span></div>' +
+      '<div class="visual__flow">' +
+        '<div class="visual__step visual__step--done">1 hold accepted<span>7 turned away</span></div>' +
+        '<div class="visual__step">Razorpay signature checked<span>hmac-sha256</span></div>' +
+        '<div class="visual__step visual__step--done">QR ticket issued<span>booked</span></div>' +
+      "</div>",
     askdb:
       '<p class="visual__label">question</p>' +
       '<p class="visual__bubble">Which customers ordered the most last month?</p>' +
@@ -203,6 +221,9 @@
   gsap.from(".stack > div", { y: 40, opacity: 0, duration: .7, stagger: .1, ease: "power3.out", scrollTrigger: { trigger: ".stack", start: "top 85%" } });
   $$(".visual__bars").forEach(function (bars) {
     gsap.from(bars.children, { scaleY: 0, duration: .9, stagger: .08, ease: "power3.out", scrollTrigger: { trigger: bars, start: "top 90%" } });
+  });
+  $$(".visual__seats").forEach(function (seats) {
+    gsap.from(seats.children, { scale: 0, opacity: 0, duration: .35, stagger: { each: .012, from: "center" }, ease: "back.out(2)", scrollTrigger: { trigger: seats, start: "top 88%" } });
   });
   $$(".visual__flow").forEach(function (flow) {
     gsap.from(flow.children, { x: 30, opacity: 0, duration: .5, stagger: .1, ease: "power2.out", scrollTrigger: { trigger: flow, start: "top 85%" } });

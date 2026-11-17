@@ -39,6 +39,7 @@ window.PORTFOLIO = {
       sql: "SELECT project, what_it_does\nFROM work\nORDER BY started DESC;",
       columns: ["project", "what_it_does"],
       rows: [
+        ["Showzo", "Book movie seats, pay and get a QR ticket"],
         ["AskDB", "Ask a database questions in plain English"],
         ["Electricity Billing System", "Meter readings in, bills and payments out"]
       ]
@@ -69,6 +70,31 @@ window.PORTFOLIO = {
 
   /* Projects, shown in this order. Add more by copying a block. */
   projects: [
+    {
+      name: "Showzo",
+      visual: "showzo",
+      year: "2026",
+      tagline: "Movie tickets, booked without double booking.",
+      summary:
+        "Pick a city, browse what's playing, choose a show, pick seats on a live seat map and pay. Showzo holds your seats while you pay, so two people can never end up with the same seat, then issues a QR ticket.",
+      steps: [
+        { title: "You pick seats", text: "Seats are held for 8 minutes. The database allows one hold per seat, so a second request for the same seat is turned away." },
+        { title: "You pay", text: "The server creates a Razorpay order and checks Razorpay's signature before booking anything." },
+        { title: "You get a ticket", text: "Held seats become booked and a QR ticket appears in My bookings." }
+      ],
+      details: [
+        "Tested: 8 simultaneous requests for one seat, exactly 1 wins",
+        "Razorpay payments verified with HMAC-SHA256 on the server",
+        "Sign-in with Spring Security and JWT",
+        "34 automated tests run on every push with GitHub Actions",
+        "Live on Render, TiDB Cloud and Vercel"
+      ],
+      stack: ["Java 21", "Spring Boot 3", "Spring Data JPA", "MySQL", "Spring Security", "JWT", "Razorpay", "React", "Vite", "MUI", "Docker"],
+      links: [
+        { label: "Open Showzo", url: "https://showzo-chi.vercel.app/" },
+        { label: "Read the code", url: "https://github.com/seven-mills04/showzo" }
+      ]
+    },
     {
       name: "AskDB",
       visual: "askdb",   // the picture on the right: "askdb", "billing" or "" for none
@@ -117,14 +143,15 @@ window.PORTFOLIO = {
 
   /* What I work with, grouped. */
   stack: [
-    { group: "Backend", items: ["Java", "Spring Boot", "Spring MVC", "Spring Security + JWT", "Hibernate, Spring Data JPA", "REST API design"] },
+    { group: "Backend", items: ["Java", "Spring Boot", "Spring MVC", "Spring Security + JWT", "Hibernate, Spring Data JPA", "REST API design", "Payments (Razorpay)"] },
     { group: "Data", items: ["MySQL", "PostgreSQL", "SQL", "JDBC"] },
     { group: "Front end", items: ["React", "JavaScript", "JSP"] },
-    { group: "Shipping", items: ["Docker", "Jenkins (CI/CD)", "GitHub Actions", "Oracle Cloud (OCI)", "Git, Maven", "Postman, Swagger"] }
+    { group: "Shipping", items: ["Docker", "Jenkins (CI/CD)", "GitHub Actions", "Render, Vercel", "Oracle Cloud (OCI)", "Git, Maven", "Postman, Swagger"] }
   ],
 
   /* Timeline, newest first. It shows on the site once there are 2 or more entries. */
   path: [
+    { when: "Nov 2026", title: "Built and launched Showzo", note: "Movie ticket booking with seat locking, Razorpay payments and QR tickets. Live on Render, TiDB Cloud and Vercel." },
     { when: "Nov 2026", title: "Built and launched AskDB", note: "Plain-English-to-SQL tool: Spring Boot backend first, then the React front end." },
     { when: "Jul 2026", title: "AMD Developer Hackathon: ACT II", note: "lablab.ai. Built and submitted a solution on AMD Developer Cloud and Hugging Face Spaces." },
     { when: "Jun – Jul 2026", title: "Software Development Intern, BSES Yamuna Power Ltd.", note: "New Delhi. Built the Electricity Billing System end to end." },
