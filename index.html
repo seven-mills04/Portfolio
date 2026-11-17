@@ -4,92 +4,106 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Krishna Navneet Kumar, Java backend developer</title>
-<meta name="description" content="Portfolio of Krishna Navneet Kumar, a backend-first software engineer working in Java, Spring Boot and React.">
+<meta name="description" content="Portfolio of Krishna Navneet Kumar, a Java backend developer working with Spring Boot, SQL and React.">
+<meta name="theme-color" content="#07080c">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <a class="skip" href="#work">Skip to work</a>
+<div class="glow" aria-hidden="true"><i></i><i></i></div>
 
-<header class="top">
-  <a class="top__name" href="#home" data-bind="name"></a>
-  <nav class="top__nav" aria-label="Sections">
+<header class="nav">
+  <a class="nav__name" href="#home" data-initials></a>
+  <nav class="nav__links" aria-label="Sections">
     <a href="#work">Work</a>
     <a href="#stack">Stack</a>
-    <a href="#path" data-nav="path">Path</a>
+    <a href="#path">Path</a>
     <a href="#contact">Contact</a>
   </nav>
-  <p class="status"><span class="status__dot" aria-hidden="true"></span><span data-bind="status"></span></p>
+  <a class="nav__cta" data-link="resume" target="_blank" rel="noopener">Resume</a>
 </header>
 
 <main id="home">
   <section class="hero">
     <div class="hero__text">
-      <h1 class="hero__name"><span data-bind="firstLine"></span><span data-bind="secondLine"></span></h1>
-      <p class="hero__role" data-bind="role"></p>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span><span data-bind="status"></span></p>
+      <h1 class="hero__name">
+        <span class="line"><span class="line__in" data-bind="firstLine"></span></span>
+        <span class="line line--serif"><span class="line__in" data-bind="secondLine"></span></span>
+      </h1>
+      <p class="hero__role"><span data-bind="role"></span><span class="hero__place" data-bind="location"></span></p>
       <p class="hero__intro" data-bind="intro"></p>
       <div class="hero__actions">
         <a class="btn btn--solid" href="#contact">Get in touch</a>
         <a class="btn" href="#work">See the work</a>
-        <a class="btn" data-link="resume" target="_blank" rel="noopener">View resume</a>
       </div>
     </div>
-    <figure class="hero__photo">
-      <img data-photo alt="Portrait of Krishna Navneet Kumar" width="880" height="1100">
+    <figure class="hero__photo" data-tilt>
+      <div class="hero__frame"><img data-photo alt="Portrait of Krishna Navneet Kumar" width="880" height="1100"></div>
+      <figcaption class="hero__chip"><span class="status__dot" aria-hidden="true"></span>Building AskDB</figcaption>
     </figure>
   </section>
 
-  <section class="ask" aria-labelledby="ask-title">
-    <div class="ask__head">
-      <h2 id="ask-title">Ask this page a question</h2>
-      <p>My main project turns plain English into SQL. The page works the same way: pick a question and watch the query run.</p>
+  <div class="marquee" aria-hidden="true"><div class="marquee__track" data-marquee></div></div>
+
+  <section class="ask wrap" aria-labelledby="ask-title">
+    <div class="ask__head" data-reveal>
+      <h2 id="ask-title">Ask this page <em>anything</em></h2>
+      <p>My main project turns plain English into SQL. This page works the same way: pick a question and watch the query run.</p>
     </div>
-    <div class="ask__body">
-      <div class="ask__questions" role="group" aria-label="Questions" data-questions></div>
-      <div class="ask__console">
-        <pre class="ask__sql" aria-live="polite"><code data-sql></code></pre>
-        <div class="ask__result" data-result></div>
+    <div class="ask__body" data-reveal>
+      <div class="ask__bar" aria-hidden="true"><i></i><i></i><i></i><span>krishna.db</span></div>
+      <div class="ask__grid">
+        <div class="ask__questions" role="group" aria-label="Questions" data-questions></div>
+        <div class="ask__console">
+          <pre class="ask__sql" aria-live="polite"><code data-sql></code></pre>
+          <div class="ask__result" data-result></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="work">
-    <header class="block__head">
-      <h2>Selected work</h2><span class="block__index">(001)</span>
+  <section class="block wrap" id="work">
+    <header class="block__head" data-reveal>
+      <h2>Selected <em>work</em></h2><span class="block__index">(001)</span>
     </header>
-    <div data-projects></div>
+    <div class="projects" data-projects></div>
   </section>
 
-  <section class="block" id="stack">
-    <header class="block__head">
-      <h2>What I work with</h2><span class="block__index">(002)</span>
+  <section class="block wrap" id="stack">
+    <header class="block__head" data-reveal>
+      <h2>What I <em>work with</em></h2><span class="block__index">(002)</span>
     </header>
     <div class="stack" data-stack></div>
   </section>
 
-  <section class="block" id="path" hidden>
-    <header class="block__head">
-      <h2>The path so far</h2><span class="block__index">(003)</span>
+  <section class="block wrap" id="path">
+    <header class="block__head" data-reveal>
+      <h2>The path <em>so far</em></h2><span class="block__index">(003)</span>
     </header>
     <ol class="path" data-path></ol>
-    <div class="certs" data-certs></div>
+    <div class="certs" data-certs data-reveal></div>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Have a role or a problem worth solving? Write to me.</h2>
-    <div class="contact__row">
+  <section class="contact wrap" id="contact">
+    <p class="contact__kicker" data-reveal>Have a role or a problem worth solving?</p>
+    <h2 class="contact__title" data-reveal>Let's <em>talk.</em></h2>
+    <div class="contact__row" data-reveal>
       <a class="contact__mail" data-mail></a>
-      <button class="btn btn--light" type="button" data-copy>Copy email</button>
+      <button class="btn" type="button" data-copy>Copy email</button>
     </div>
-    <ul class="contact__links" data-socials></ul>
+    <ul class="contact__links" data-socials data-reveal></ul>
   </section>
 </main>
 
-<footer class="foot">
+<footer class="foot wrap">
   <span data-bind="name"></span>
   <span data-year></span>
   <a href="#home">Back to top</a>
 </footer>
 
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
 <script src="js/content.js"></script>
 <script src="js/main.js"></script>
 </body>

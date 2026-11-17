@@ -71,6 +71,7 @@ window.PORTFOLIO = {
   projects: [
     {
       name: "AskDB",
+      visual: "askdb",   // the picture on the right: "askdb", "billing" or "" for none
       year: "2026",
       tagline: "Ask a database questions in plain English.",
       summary:
@@ -94,8 +95,9 @@ window.PORTFOLIO = {
     },
     {
       name: "Electricity Billing System",
+      visual: "billing",
       year: "2026",
-      tagline: "Built during my internship at BSES Yamuna Power Ltd.",
+      tagline: "Built during my internship at BSES Yamuna Power.",
       summary:
         "A full-stack billing app covering five modules: consumer management, connection provisioning, meter readings, tariff-based billing and payments. Bills are generated automatically instead of being worked out by hand.",
       steps: [],

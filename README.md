@@ -1,6 +1,6 @@
 # Krishna Navneet Kumar — portfolio
 
-A fast, static portfolio site. No build step, no frameworks: plain HTML, CSS and JavaScript.
+A fast, static portfolio site. No build step: plain HTML, CSS and JavaScript, with GSAP for the animations.
 
 ## Open it
 
@@ -25,7 +25,8 @@ Anything left as `""` is hidden on the site.
     index.html        page structure
     css/style.css     colours, type, layout
     js/content.js     all the words and links  <- edit this one
-    js/main.js        builds the page from content.js, runs the "ask this page" box
+    js/main.js        builds the page from content.js, runs the "ask this page" box and the animations
+    js/vendor/        GSAP animation library
     assets/           photo and fonts (fonts are self-hosted, so the site loads fast)
 
 ## Put it online
