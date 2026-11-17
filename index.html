@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krishna Navneet Kumar, Java backend developer</title>
+<meta name="description" content="Portfolio of Krishna Navneet Kumar, a backend-first software engineer working in Java, Spring Boot and React.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="top">
+  <a class="top__name" href="#home" data-bind="name"></a>
+  <nav class="top__nav" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#stack">Stack</a>
+    <a href="#path" data-nav="path">Path</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <p class="status"><span class="status__dot" aria-hidden="true"></span><span data-bind="status"></span></p>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero__text">
+      <h1 class="hero__name"><span data-bind="firstLine"></span><span data-bind="secondLine"></span></h1>
+      <p class="hero__role" data-bind="role"></p>
+      <p class="hero__intro" data-bind="intro"></p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#contact">Get in touch</a>
+        <a class="btn" href="#work">See the work</a>
+        <a class="btn" data-link="resume" target="_blank" rel="noopener">View resume</a>
+      </div>
+    </div>
+    <figure class="hero__photo">
+      <img data-photo alt="Portrait of Krishna Navneet Kumar" width="880" height="1100">
+    </figure>
+  </section>
+
+  <section class="ask" aria-labelledby="ask-title">
+    <div class="ask__head">
+      <h2 id="ask-title">Ask this page a question</h2>
+      <p>My main project turns plain English into SQL. The page works the same way: pick a question and watch the query run.</p>
+    </div>
+    <div class="ask__body">
+      <div class="ask__questions" role="group" aria-label="Questions" data-questions></div>
+      <div class="ask__console">
+        <pre class="ask__sql" aria-live="polite"><code data-sql></code></pre>
+        <div class="ask__result" data-result></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <header class="block__head">
+      <h2>Selected work</h2><span class="block__index">(001)</span>
+    </header>
+    <div data-projects></div>
+  </section>
+
+  <section class="block" id="stack">
+    <header class="block__head">
+      <h2>What I work with</h2><span class="block__index">(002)</span>
+    </header>
+    <div class="stack" data-stack></div>
+  </section>
+
+  <section class="block" id="path" hidden>
+    <header class="block__head">
+      <h2>The path so far</h2><span class="block__index">(003)</span>
+    </header>
+    <ol class="path" data-path></ol>
+    <div class="certs" data-certs></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Have a role or a problem worth solving? Write to me.</h2>
+    <div class="contact__row">
+      <a class="contact__mail" data-mail></a>
+      <button class="btn btn--light" type="button" data-copy>Copy email</button>
+    </div>
+    <ul class="contact__links" data-socials></ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <span data-bind="name"></span>
+  <span data-year></span>
+  <a href="#home">Back to top</a>
+</footer>
+
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
