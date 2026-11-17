@@ -26,7 +26,7 @@
 <main id="home">
   <section class="hero">
     <div class="hero__text">
-      <p class="status"><span class="status__dot" aria-hidden="true"></span><span data-bind="status"></span></p>
+      <p class="status"><svg class="status__spark" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="spark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9fc0"/><stop offset="1" stop-color="#7c83ff"/></linearGradient></defs><path fill="url(#spark)" d="M12 0c.9 6.6 4.5 10.200 12 12-7.500 1.800-11.100 5.400-12 12-.9-6.600-4.500-10.200-12-12 7.500-1.800 11.100-5.400 12-12z"/></svg><span data-bind="status"></span></p>
       <h1 class="hero__name">
         <span class="line"><span class="line__in" data-bind="firstLine"></span></span>
         <span class="line line--serif"><span class="line__in" data-bind="secondLine"></span></span>
@@ -40,7 +40,6 @@
     </div>
     <figure class="hero__photo" data-tilt>
       <div class="hero__frame"><img data-photo alt="Portrait of Krishna Navneet Kumar" width="880" height="1100"></div>
-      <figcaption class="hero__chip"><span class="status__dot" aria-hidden="true"></span>Building AskDB</figcaption>
     </figure>
   </section>
 

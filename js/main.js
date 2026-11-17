@@ -184,8 +184,7 @@
     .from(".nav", { y: -30, opacity: 0, duration: .8 })
     .from(".line__in", { yPercent: 110, duration: 1.1, stagger: .12 }, "-=.5")
     .from(".hero .status, .hero__role, .hero__intro, .hero__actions", { y: 24, opacity: 0, duration: .8, stagger: .08 }, "-=.7")
-    .from(".hero__photo", { opacity: 0, scale: .92, duration: 1.2 }, "-=1.2")
-    .from(".hero__chip", { opacity: 0, x: -20, duration: .6 }, "-=.5");
+    .from(".hero__photo", { opacity: 0, scale: .92, duration: 1.2 }, "-=1.2");
 
   // Portrait tilts toward the pointer.
   var frame = $(".hero__frame");
